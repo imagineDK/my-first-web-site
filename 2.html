@@ -3,52 +3,118 @@
 <head>
     <title>DK - CSS</title>
     <meta charset="utf-8">
+    <style>
+        body{
+            margin:0px;
+        }
+        a {
+            Color:black;
+            text-decoration: none;
+        }  
+        #active {
+            color: red;
+        }
+        .saw {
+            color:gray;
+        }
+      
+        h1 {
+            font-size: 45px;
+            text-align: center;
+            border-bottom:1px solid gray;
+            margin:0px;
+            Padding:20px;
+        }
+        ol{
+            border-right:1px solid gray;
+            width:100px;
+            margin:0px;
+            padding:20px;
+        }
+        #grid{
+            display: grid;
+            grid-template-columns: 150px 1fr;
+        }
+        #grid ol{
+            Padding-left:33px;
+        }
+        #article{
+            padding-left:25px;
+        }
+        @media(max-width:800px){
+            #grid{
+                display:block;
+            }
+            ol{
+            border-right:none;
+            }
+            h1 {
+            border-bottom:none;
+        }
+        
+        }
+    </style>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
     <ol>
-        <li><a href="1.html">HTML</a></li>
-        <li><a href="2.html">CSS</a></li>
+        <li><a href="1.html" class="saw">HTML</a></li>
+        <li><a href="2.html" class="saw" id="active">CSS</a></li>
     </ol>
-    <h2>디케이의 CSS 자습서</h2>
-    <p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="_blank" title="CSS specification"> Cascading Style Sheets (CSS)</a></p>
-    <img src="bike.jpg" width="320px">
-    <p>안녕하세요. 저는 <strong>디자이너 <u>디케이</u></strong>입니다.</p> <p style="margin-top:45px;">CSS를 공부하는 공간입니다.</p>
-  
+    <div id="article">
+        <h2>CSS</h2>
+        <p><a href="https://en.wikipedia.org/wiki/CSS" style="color:red;" target="_blank" title="CSS specification"> Cascading Style Sheets (CSS)</a>
+        is a style sheet language used for describing the presentation of a document written in a markup language 
+        such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, 
+        alongside HTML and JavaScript.[2]</p>
+        <p>CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts.[3] 
+        This separation can improve content accessibility; provide more flexibility and control in the specification of 
+        presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, 
+        which reduces complexity and repetition in the structural content; and enable the .css file to be cached to improve the page 
+        load speed between the pages that share the file and its formatting.</p>
+    </div>
+    </div>
+    <br><br><br>-------------------------------------------------------------------------------------
     <br><br><br>
-    <h2>Tag 종류</h2>
-    h1~h6: 제목 크기<br>
-    strong: 볼드<br>
-    p: 단락구분, css연동시 마진값 정확히 입력 가능<br>
-    br: 줄바꿈<br>
-    u: 밑줄<br>
-    img: 이미지넣기<br>
-    li: 리스트, 항목의 리스트화, 앞에 점이 생김-항상 자식<br>
-    ul: 언오더드리스트, li의 부모. 같은계열 항목끼리 감싸주면 구분됨, 비주얼적 변화는 없음<br>
-    ol: 오더드리스트, li의 부모. 리스트 앞에 숫자를 자동으로 삽입<br>
-    title: 웹페이지 제목<br>
-    meta charset="utf-8": 문자 저장방식. 이걸 해줘야 문자 깨짐이 없다<br>
-    head: 타이틀 및 헤드관련 정보를 묶는 태그<br>
-    body: 본문을 묶는 태그<br>
-    html: 프로젝트 전체를 묶는 태그<br>
-    !DOCTYPE html: 제일 위에 관용적으로 적는다. html로 만든 코드라는 것을 표현<br>
-    a: 링크 태그. 앵커의 약자<br>
-
+    <h3>html내에서 css를 사용하는 두가지 방법</h3>
+    1. style이라는 태그를 통해 묶어주고 이 태그 안쪽에 css문법을 사용, 셀렉터 {} 중괄호를 사용하며 선언이라고 함 <br>
+    2. html 태그 안에 style="~~"이라는 속성 구문을 넣고 css문법을 사용<br>
     <br><br>
-
-    <h2>Attribute(속성) 종류</h2>
-    width: 가로사이즈<br>
-    src: 소스 가져올 때<br>
-    href: 하이퍼텍스트 참조(레퍼런스) 라는 뜻. a태그 뒤에 링크를 넣을 때 사용<br>
-    target="blank"를 링크 뒤에 달아주면 새창으로 열린다. 없으면 페이지변경으로 열림<br>
-    title="~~~"을 링크 뒤에 달아주면 마우스 호버시 간단한 타이틀명이 보인다<br>
-    <br><br><br>
-
-    <h1>This is heading 1</h1>
-    <h2>This is heading 2</h2>
-    <h3>This is heading 3</h3>
-    <h4>This is heading 4</h4>
-    <h5>This is heading 5</h5>
-    <h6>This is heading 6</h6>
+    <h3>Style</h3>
+    color: 폰트의 컬러 의미. (ex. a {color:red;} - 링크되는 폰트는 모두 레드로 적용)<br>
+    text-decoration: 텍스트의 장식 제어. (ex. 언더라인 유무 등) <br>
+    font-size: 폰트의 크기. 픽셀, 센치, 퍼센트, 스몰, 라지 등 다양한 방식으로 정의 가능 <br>
+    text-align: 텍스트의 정렬 방식. center를 넣으면 중앙정렬 등 <br>
+    border-width: 아웃라인의 두께 <br>
+    border-color: 아웃라인 컬러 <br>
+    border-style: 아웃라인 스타일 <br>
+    border-bottom을 입력하면 보더의 밑줄만 사용 <br>
+    중복되는 스타일을 한번에 쓸 수 있다.  ex. border: 5px solid red; <br>
+    display: inline 을 하면 블록레벨 엘리먼트가 인라인 엘리먼트로 변한다 <br>
+    display: block 을 하면 인라인 엘리먼트가 블록레벨 엘리먼트로 변한다 <br>
+    display: none 을 하면 해당 부분이 사라진다 <br>
+    padding: 패딩 여백 값을 설정한다 <br>
+    margin: 엘리먼트 간 간격을 설정한다 <br>
+    display: grid 를 그리드를 제작한다 <br>
+    <br><br>
+    <h3>ETC</h3>
+    마지막에 세미콜론 붙이는 이유: 스타일들의 선언 간 구분점. 특히 한 줄에 적을 때 구분 가능 <br>
+    클래스로 지정된 속성을 셀렉터 안에서 작동하게 할때에는 속성명 앞에 .점을 찍어준다 <br>
+    ex.  .saw { color:gray } <br>
+    id의 경우 #을 앞에 붙여준다. ex.  #active {~~~} <br><br>
+    블록레벨 엘리먼트: 엘리먼트를 포함한 화면 전체범위를 사용한다 <br> ex. h1태그를 실행하면 자동줄바뀜이 되어있는데 이는 이 태그가 화면을 다 차지하고 있어서이다 <br>
+    인라인 엘리먼트: 엘리먼트 자체 크기만큼을 범위로 사용한다. <br> ex.  a태그를 실행하면 줄바뀜이 이뤄지지않는데 이는 이태그가 자기크기만큼만 범위로 사용하기 때문이다 <br>
+    <br><br>
+    <h3>Grid</h3>
+    display: grid; <br>
+    grid-template-columns: 150px 1fr; 을 입력하면 첫 열은 가로 150픽셀로 고정된 박스를 만들고 두번째 열은 화면을 꽉 채운다. <br>
+    grid-template-columns: 1fr; 1fr; 을 입력하면 첫 열, 둘째 열이 1:1 비율로 화면을 꽉 채운다 <br>
+    grid-template-columns: 2fr; 1fr; 을 입력하면 첫 열, 둘째 열이 2:1 비율로 화면을 꽉 채운다 <br>
+    즉, fr은 전체화면을 기준으로 화면을 나누는 비율을 조정하는 단위이다 <br>
+    <br><br>
+    <h3>반응형 웹 디자인 : 미디어 쿼리</h3>
+    style안쪽에 @media(min-width:800px) 라고 입력하고 중괄호 안에 @@를 ~~해라라고 명령하면<br>
+    화면사이즈 가로 800픽셀을 넘어가는 순간 @@가 ~~된다 라는 식의 반응형 웹디자인을 할 수 있다 <br>
 </body>
 </html>
